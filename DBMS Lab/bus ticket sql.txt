@@ -1,0 +1,49 @@
+create table Bus(b_num int primary key,b_destination varchar(20),b_source varchar(20),b_date date);
+show tables;
+insert into Bus values(101, " Delhi      ","Hyderabad          ",     '    22-06-21'),(102, " Mumbai      ","Hyderabad          ",      '    20-06-21'),(103, " Mumbai      ","Delhi       ",      '    20-06-21');
+select * from Bus;
+create table passenger(p_num int primary key,p_name varchar(20),p_sex char(10),p_age int,p_seatnum int);
+show tables;
+insert into passenger values(1,"aliya","Female",25,16);
+insert into passenger values(2,"ali","Male",22,12);
+insert into passenger values(3,"janu","Female",25,19);
+select * from passenger;
+create table Ticket(t_num int primary key,t_sex char(10),t_age int,Source varchar(20),Destination varchar(20),arrival_time varchar(6),depature_time varchar(6) );
+show tables;
+insert into Ticket values(5,"Male",24,"Hyderabad","Delhi","9:30","4:45");
+select * from Ticket;
+
+CREATE TABLE Reservation(p_num int, foreign key(p_num) references passenger(p_num),b_date date, No_of_seats int,
+Address Varchar(40),Contact_No int,Status Char(2));
+insert into Reservation values(1,'    22-06-21',3,"vv.nagar",12345678,'R');
+Select * from Reservation;
+
+CREATE TABLE Cancellation(p_num int, foreign key(p_num) references passenger(p_num),b_date date,No_of_seats int, 
+Address Varchar(40),Contact_No int,Status char(2));
+insert into Cancellation values(2,'    22-06-21',3,"vv.nagar",123456788,'C');
+select * from Cancellation;
+
+OP
+Tables_in_test
+Bus
+b_num	b_destination	b_source	b_date
+101	 Delhi      	Hyderabad          	2022-06-21
+102	 Mumbai      	Hyderabad          	2020-06-21
+103	 Mumbai      	Delhi       	2020-06-21
+Tables_in_test
+Bus
+passenger
+p_num	p_name	p_sex	p_age	p_seatnum
+1	aliya	Female	25	16
+2	ali	Male	22	12
+3	janu	Female	25	19
+Tables_in_test
+Bus
+Ticket
+passenger
+t_num	t_sex	t_age	Source	Destination	arrival_time	depature_time
+5	Male	24	Hyderabad	Delhi	9:30	4:45
+p_num	b_date	No_of_seats	Address	Contact_No	Status
+1	2022-06-21	3	vv.nagar	12345678	R
+p_num	b_date	No_of_seats	Address	Contact_No	Status
+2	2022-06-21	3	vv.nagar	123456788	C

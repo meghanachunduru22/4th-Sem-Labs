@@ -1,0 +1,47 @@
+create database 19WH1A1216;
+use 19WH1A1216;
+create table student_info(sid int primary key,sname char(20),age int,rating real);
+show tables;
+desc student_info;
+insert into student_info values(1,'alia',19,9.2),(2,'Katrina',22,9.5),(3,'Kareena',26,9.8);
+Select * from student_info;
+select sname from student_info;
+select age from student_info where age>19;
+update student_info set age = 21 where sid=1;
+select * from student_info;
+delete from student_info where sname='alia';
+select * from student_info;
+select * from student_info order by age desc;
+
+
+OP
+Tables_in_19WH1A1216
+student_info
+Field	Type	Null	Key	Default	Extra
+sid	int	NO	PRI	NULL	
+sname	char(20)	YES		NULL	
+age	int	YES		NULL	
+rating	double	YES		NULL	
+sid	sname	age	rating
+1	alia	19	9.2
+2	Katrina	22	9.5
+3	Kareena	26	9.8
+sname
+alia
+Katrina
+Kareena
+age
+22
+26
+sid	sname	age	rating
+1	alia	21	9.2
+2	Katrina	22	9.5
+3	Kareena	26	9.8
+sid	sname	age	rating
+2	Katrina	22	9.5
+3	Kareena	26	9.8
+sid	sname	age	rating
+3	Kareena	26	9.8
+2	Katrina	22	9.5
+
+
